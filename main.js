@@ -10,13 +10,9 @@ function start() {
 recognition.onresult = function (event) {
     console.log(event);
 
-    var Content = event.results[0][0].transcript;
+    Content = event.results[0][0].transcript.toLowerCase();
     console.log(Content);
-
-    document.getElementById("textbox").innerHTML = Content;
-    console.log(Content);
-    if (Content == "take my selfie") {
-        console.log("taking selfie ---");
+    if (Content == "selfie") {
         speak();
     }
 
